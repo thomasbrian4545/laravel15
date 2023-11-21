@@ -16,7 +16,7 @@ return new class extends Migration
             $table->decimal('sem_1', 3, 2)->nullable();
             $table->decimal('sem_2', 3, 2)->nullable();
             $table->decimal('sem_3', 3, 2)->nullable();
-            $table->foreignId('mahasiswa_id')->unique()->constrained();
+            $table->foreignId('mahasiswa_id')->unique()->constrained()->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
